@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+ <!-- Mallina käytetty videotutoriaalia: https://www.youtube.com/watch?v=y1ZaBalVZic  -->
+<!-- VBox, joka toimii käyttöliittymän pohjana. Kontrolleriksi
+määrittyy Kontrolleri luokka. Painikkeiden fontin määritys-->
+<VBox spacing="10" alignment="CENTER" prefWidth="250" prefHeight="470"
+      fx:controller="laskin.Kontrolleri" xmlns:fx="http://javafx.com/fxml">
+    <fx:define>
+        <Font fx:id="FONT" name="Agency FB" size="25" />
+    </fx:define>
+    
+    <!-- Tekstikenttä tulosten esittämiseen. Teksti asettuu oikeaan alareunaan -->
+    <StackPane alignment="CENTER">
+        <Rectangle fill="WHITE" stroke="GRAY" width="230" height="100" />
+        <Text fx:id="tulos" layoutX="180.0" layoutY="130.0" 
+              StackPane.alignment="BOTTOM_RIGHT" >
+            <font>
+                  <Font name="Agency FB" size="30.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="5.0" right="15.0" />
+               </StackPane.margin>
+        </Text>
+    </StackPane>
+
+   <!-- HBox painikkeille: '7', '8', '9', '/'.
+Painikkeet toteuttavat Kontrolleri luokan metodit: numerot(), operaattorit() -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="7" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="8" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="9" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="/" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#operaattorit" />
+    </HBox>
+    
+    <!-- HBox painikkeille: '4', '5', '6', '*'.
+Painikkeet toteuttavat Kontrolleri luokan metodit: numerot(), operaattorit() -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="4" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="5" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="6" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="*" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#operaattorit" />
+    </HBox>
+    
+    <!-- HBox painikkeille: '1', '2', '3', '-'.
+Painikkeet toteuttavat Kontrolleri luokan metodit: numerot(), operaattorit() -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="1" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="2" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="3" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="-" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#operaattorit" />
+    </HBox>
+    
+    <!--HBox painikkeille: '0', '=', '+'.
+Painikkeet toteuttavat Kontrolleri luokan metodit: numerot(), operaattorit() -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="0" prefWidth="110" prefHeight="60" font="$FONT"
+                onAction="#numerot" />
+        <Button text="=" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#operaattorit" />
+        <Button text="+" prefWidth="50" prefHeight="60" font="$FONT"
+                onAction="#operaattorit" />
+    </HBox>
+    
+     <!--HBox painikkeille: 'ANS', 'CE'.
+Painikkeet toteuttavat Kontrolleri luokan metodit: tyhjenna(), palauta() -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="ANS" prefWidth="110" prefHeight="60"
+                font="$FONT" onAction="#palauta"/>
+        <Button text="CE" prefWidth="110" prefHeight="60" font="$FONT"
+                onAction="#tyhjenna" />
+        
+    </HBox>
+    
+    <!-- Sinertävä varjostus  -->
+    <effect>
+      <InnerShadow choke="0.3" color="#77ace0" radius="10.0" width="20.0" />
+   </effect>
+    
+</VBox>
